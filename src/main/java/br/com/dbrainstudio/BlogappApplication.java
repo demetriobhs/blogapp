@@ -1,4 +1,4 @@
-package br.com.dm3brain;
+package br.com.dbrainstudio;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package br.com.dm3brain.post;
+package br.com.dbrainstudio.post;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
