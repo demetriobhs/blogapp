@@ -11,7 +11,8 @@ import javax.persistence.OneToMany;
 
 import br.com.dbrainstudio.category.Category;
 import br.com.dbrainstudio.entity.BaseEntity;
-import br.com.dbrainstudio.reply.Reply;
+import br.com.dbrainstudio.post.reply.Reply;
+import br.com.dbrainstudio.post.section.Section;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 

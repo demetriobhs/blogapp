@@ -1,4 +1,4 @@
-package br.com.dbrainstudio.reply;
+package br.com.dbrainstudio.post.reply;
 
 import java.util.Date;
 
