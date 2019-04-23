@@ -1,10 +1,18 @@
 package br.com.dbrainstudio.post;
 
-import lombok.Data;
+import javax.persistence.Entity;
 
+import br.com.dbrainstudio.entity.BaseEntity;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
+@Entity
 @Data
-public class Section {
+@EqualsAndHashCode(callSuper = true)
+public class Section extends BaseEntity {
 	
+	private static final long serialVersionUID = 1L;
+
 	private String title;
 	
 	private String text;
