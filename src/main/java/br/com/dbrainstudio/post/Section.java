@@ -1,6 +1,8 @@
 package br.com.dbrainstudio.post;
 
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 import br.com.dbrainstudio.entity.BaseEntity;
 import lombok.Data;
@@ -17,6 +19,8 @@ public class Section extends BaseEntity {
 	
 	private String text;
 	
+	@ManyToOne
+	@JoinColumn(name = "post_id")
 	private Post post;
 
 }
