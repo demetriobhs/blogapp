@@ -1,4 +1,4 @@
-package br.com.dm3brain;
+package br.com.dbrainstudio;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
