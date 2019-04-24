@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
@@ -23,9 +25,11 @@ public class Reply extends BaseEntity {
 
 	private String author;
 	
-	private String text;
+	@Lob
+	@Basic
+	private String message;
 	
-	private Date date;
+	private Date createdAt;
 	
 	@ManyToOne
 	@JoinColumn(name = "post_id")
