@@ -2,10 +2,8 @@ package br.com.dbrainstudio.post.reply;
 
 import java.util.Date;
 
-import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
-import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 
 import br.com.dbrainstudio.entity.BaseEntity;
@@ -21,11 +19,9 @@ public class SubReply extends BaseEntity {
 	
 	private String author;
 	
-	@Lob
-	@Basic
-	private String message;
+	private String text;
 	
-	private Date createdAt;
+	private Date date;
 	
 	@ManyToOne
 	@JoinColumn(name = "reply_id")

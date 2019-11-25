@@ -25,9 +25,7 @@ public class Post extends BaseEntity {
 
 	private String title;
 	
-	private Date createdAt;
-	
-	private Date lastUpdate;
+	private Date creationDate;
 	
 	@ManyToOne
 	@JoinColumn(name = "category_id")

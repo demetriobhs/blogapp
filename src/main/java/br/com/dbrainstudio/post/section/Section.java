@@ -1,9 +1,7 @@
 package br.com.dbrainstudio.post.section;
 
-import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
-import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 
 import br.com.dbrainstudio.entity.BaseEntity;
@@ -20,8 +18,6 @@ public class Section extends BaseEntity {
 
 	private String title;
 	
-	@Lob
-	@Basic
 	private String text;
 	
 	@ManyToOne
