@@ -1,4 +1,4 @@
-package br.com.dbrainstudio.entity;
+package br.com.dbrainlab.infrastructure.persistence;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.NoRepositoryBean;
