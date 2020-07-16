@@ -53,6 +53,13 @@
 			<version>1.18.12</version>
 			<scope>provided</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>ma.glasnost.orika</groupId>
+			<artifactId>orika-core</artifactId>
+			<version>1.4.2</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
