@@ -1,4 +1,4 @@
-package br.com.dbrainlab.infrastructure.service.representation;
+package br.com.dbrainlab.infrastructure.service.representation.impl;
 
 import lombok.*;
 import lombok.experimental.SuperBuilder;

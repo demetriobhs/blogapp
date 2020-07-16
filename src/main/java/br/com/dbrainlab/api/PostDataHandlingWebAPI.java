@@ -2,7 +2,7 @@ package br.com.dbrainlab.api;
 
 import br.com.dbrainlab.domain.post.service.impl.PostDataHandlingServiceImpl;
 import br.com.dbrainlab.domain.post.service.representation.PostRepresentation;
-import br.com.dbrainlab.infrastructure.resource.DataHandlingWebAPI;
+import br.com.dbrainlab.infrastructure.web.DataHandlingWebAPI;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

@@ -5,15 +5,14 @@ import br.com.dbrainlab.infrastructure.persistence.api.provider.PersistenceAPIPr
 import br.com.dbrainlab.infrastructure.persistence.api.PersistenceRetrievalAPI;
 import br.com.dbrainlab.infrastructure.persistence.model.impl.IdentityModel;
 import br.com.dbrainlab.infrastructure.service.mapper.Mapper;
-import br.com.dbrainlab.infrastructure.service.representation.IdentityRepresentation;
+import br.com.dbrainlab.infrastructure.service.mapper.provider.MapperProvider;
+import br.com.dbrainlab.infrastructure.service.representation.impl.IdentityRepresentation;
 
 import java.util.Collection;
 import java.util.stream.Collectors;
 
 public interface DataRetrievalService<M extends IdentityModel, R extends IdentityRepresentation>
-       extends DataRetriever<R>, DataHandlingService<M> {
-
-    Mapper<R, M> getMapper();
+       extends DataRetriever<R>, DataHandlingService<M, R> {
 
     @Override
     default R findById(Long id) {
@@ -34,6 +33,10 @@ public interface DataRetrievalService<M extends IdentityModel, R extends Identit
 
     private PersistenceRetrievalAPI<M> getPersistenceAPI() {
         return (PersistenceRetrievalAPI<M>) PersistenceAPIProvider.getPersistenceAPI(getModelClass());
+    }
+
+    private Mapper<R, M> getMapper() {
+        return MapperProvider.getMapper(getRepresentationClass(), getModelClass());
     }
 
 }

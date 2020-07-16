@@ -1,6 +1,6 @@
 package br.com.dbrainlab.domain.post.service.representation;
 
-import br.com.dbrainlab.infrastructure.service.representation.IdentityRepresentation;
+import br.com.dbrainlab.infrastructure.service.representation.impl.IdentityRepresentation;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 

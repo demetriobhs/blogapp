@@ -5,7 +5,6 @@ import br.com.dbrainlab.domain.post.persistence.model.Post;
 import br.com.dbrainlab.domain.post.service.PostDataHandlingService;
 import br.com.dbrainlab.domain.post.service.representation.PostRepresentation;
 import br.com.dbrainlab.infrastructure.service.impl.DefaultDataHandlingService;
-import br.com.dbrainlab.infrastructure.service.mapper.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,12 +17,12 @@ public class PostDataHandlingServiceImpl extends DefaultDataHandlingService<Post
     }
 
     @Override
-    public Mapper<PostRepresentation, Post> getMapper() {
-        return null;
+    public Class<Post> getModelClass() {
+        return Post.class;
     }
 
     @Override
-    public Class<Post> getModelClass() {
-        return Post.class;
+    public Class<PostRepresentation> getRepresentationClass() {
+        return PostRepresentation.class;
     }
 }

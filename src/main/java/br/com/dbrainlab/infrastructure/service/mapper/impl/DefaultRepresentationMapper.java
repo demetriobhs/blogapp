@@ -1,7 +1,9 @@
-package br.com.dbrainlab.infrastructure.service.mapper;
+package br.com.dbrainlab.infrastructure.service.mapper.impl;
 
 import br.com.dbrainlab.infrastructure.persistence.model.impl.IdentityModel;
-import br.com.dbrainlab.infrastructure.service.representation.IdentityRepresentation;
+import br.com.dbrainlab.infrastructure.service.mapper.Mapper;
+import br.com.dbrainlab.infrastructure.service.mapper.provider.MapperProvider;
+import br.com.dbrainlab.infrastructure.service.representation.impl.IdentityRepresentation;
 import ma.glasnost.orika.converter.BidirectionalConverter;
 import ma.glasnost.orika.impl.DefaultMapperFactory;
 import ma.glasnost.orika.metadata.Type;
@@ -14,9 +16,9 @@ public abstract class DefaultRepresentationMapper<R extends IdentityRepresentati
 				extends BidirectionalConverter<R, M>
 				implements Mapper<R, M> {
 
-	private Class<M> modelClass;
 	private Class<R> representationClass;
-	
+	private Class<M> modelClass;
+
 	@SuppressWarnings("unused")
 	private DefaultRepresentationMapper() {}
 	
@@ -25,8 +27,10 @@ public abstract class DefaultRepresentationMapper<R extends IdentityRepresentati
 		mapperFactory.getConverterFactory().registerConverter(this);
 		super.mapperFacade = mapperFactory.getMapperFacade();
 		
-		this.modelClass = modelClass;
 		this.representationClass = representationClass;
+		this.modelClass = modelClass;
+
+		MapperProvider.registerMap(this.representationClass, this.modelClass, this);
 	}
 	
 	protected abstract M doMap(R representation);
